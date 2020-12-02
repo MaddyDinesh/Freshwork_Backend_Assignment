@@ -1,3 +1,9 @@
+Build a file-based key-value data store that supports the basic CRD (create, read, and delete)
+operations. This data store is meant to be used as a local storage for one single process on one
+laptop. The data store must be exposed as a library to clients that can instantiate a class and work
+with the data store.
+Programming Language used : Node js.
+
 The data store will support the following functional requirements.
 
 1. It can be initialized using an optional file path. If one is not provided, it will reliably
@@ -26,3 +32,42 @@ The data store must therefore be thread-safe.
 4. The client will bear as little memory costs as possible to use this data store, while
 deriving maximum performance with respect to response times for accessing the data
 store.
+
+
+STEPS TO PERFORM CRD_operation :
+The file "index.js" contain majorly contain Create , Read and Delete operation.
+Import "index.js" file to use CRD operation
+   var { create,read,deleteRecord} = require('./index');
+   
+NOTE:
+A new key-value pair can be added to the data store using the Create operation. The key is always a string - capped at 32chars. The value is always a JSON object - capped at
+16KB.
+   
+Create Function takes three Parameter as shown below:
+      create(key , Rollno , Timestamp){
+      .....
+      .....
+      }
+It creates a record in "data.json" as JSON Obj. If Create is invoked for an existing key, an appropriate error will be returned.
+
+Read Function takes one Parameter as shown below:
+      read(key){
+      ...
+      ...
+      }
+It return the record if appropriate key is matched else error will be returned accordingly . For example: If a function is called for key , which is not actually present , then error message saying "Key Not Found" will be returned.
+
+Delete also takes one parameter as shown below:
+      deleteRecord(key){
+      ....
+      ....
+      }
+It delete's the record if key is found and return the statement "Key is successfully deleted".If invaid key is provided , it returns a statement as "Key Not Found".
+Also , Time-To-Live property when is created. This property is optional. If provided, it will be evaluated as an integer defining the number of secondsthe key must be retained in the data store. Once the Time-To-Live for a key has expired,the key will no longer be available for Read or Delete operations.Finally it return with statement saying 
+
+"error: time-to-live of "+key(key you specified)+" has expired"
+    
+
+
+
+      
