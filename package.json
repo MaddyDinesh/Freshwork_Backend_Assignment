@@ -1,0 +1,16 @@
+{
+  "name": "freshwork_backend_assignment",
+  "version": "1.0.0",
+  "description": "Freshwork Backend Assignment",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mathiazhagan S",
+  "license": "ISC",
+  "dependencies": {
+    "fs": "0.0.1-security",
+    "json-size": "^1.0.0",
+    "validator": "^13.5.1"
+  }
+}
